@@ -14,4 +14,4 @@ mkdir -p ~/.ssh
 echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 
-sh -c "$SSH_URL"
+sh -c "$*"
