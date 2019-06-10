@@ -11,7 +11,7 @@ LABEL "homepage"="http://github.com/actions"
 LABEL "maintainer"="VitalyLiber <zenamax@gmail.com>"
 
 RUN apt-get update && apt-get install -y \
-  openssh-client && \
+  openssh-client \
   git && \
   rm -Rf /var/lib/apt/lists/*
 
