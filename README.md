@@ -34,7 +34,7 @@ You'll need to provide some secrets to use the action.
 * **PRIVATE_KEY**: Your SSH private key.
 * **PUBLIC_KEY**: Your SSH public key.
 
-### Required Secrets
+### Required Environments
 
 You'll need to provide some env to use the action.
 
