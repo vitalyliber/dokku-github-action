@@ -18,5 +18,7 @@ echo "$SSH_PUBLIC_KEY" | tr -d '\r' > ~/.ssh/id_rsa.pub
 chmod 600 ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa.pub
 ssh-keyscan -t rsa "$SSH_HOST" >> ~/.ssh/known_hosts
+ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+ssh-keyscan -t rsa casply.com >> ~/.ssh/known_hosts
 
 sh -c "$*"
