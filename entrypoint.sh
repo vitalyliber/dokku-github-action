@@ -5,7 +5,7 @@ if [ -z "$SSH_PRIVATE_KEY" ]; then
 	exit 1
 fi
 
-echo "$SSH_PRIVATE_KEY"
+echo "Private key $SSH_PRIVATE_KEY"
 
 mkdir -p ~/.ssh
 echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
