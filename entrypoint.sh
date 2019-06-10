@@ -5,10 +5,7 @@ if [ -z "$SSH_PRIVATE_KEY" ]; then
 	exit 1
 fi
 
-if [ -z "$SSH_URL" ]; then
-	>&2 echo "Set SSH_URL  environment variable"
-	exit 1
-fi
+echo "$SSH_PRIVATE_KEY"
 
 mkdir -p ~/.ssh
 echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
