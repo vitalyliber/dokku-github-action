@@ -38,7 +38,7 @@ You'll need to provide some secrets to use the action.
 
 You'll need to provide some env to use the action.
 
-* **HOST**: The host the action will SSH to to run the git push command. ie, `your.site.com`.
+* **HOST**: The host the action will SSH to run the git push command. ie, `your.site.com`.
 * **PROJECT**: The project is Dokku project name.
 
 ## License
