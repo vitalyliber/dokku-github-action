@@ -23,7 +23,7 @@ ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
 cd ..
 cd ..
 cd github
-cd workspace
+cd home
 ls -la
 
 GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push dokku@$HOST:$PROJECT master
