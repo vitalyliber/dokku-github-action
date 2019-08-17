@@ -22,5 +22,8 @@ ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
 
 ls -la
 git show-ref
+git checkout master
+echo "did the checkout"
+git show-ref
 
 GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push dokku@$HOST:$PROJECT master
