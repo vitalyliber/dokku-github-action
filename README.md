@@ -6,26 +6,31 @@ This action will deploy the master brunch to your Dokku server via SSH.
 
 ## Usage
 
-To use the action simply add the following lines to your `.github/main.workflow`
+To use the action simply add the following lines to your `.github/workflows/main.yml`
 
 ```
-action "Run deploy script" {
-  uses = "vitalyliber/dokku-github-action@master"
-  env = {
-      HOST = "casply.com",
-      PROJECT = "kawaii",
-    }
-  secrets = [
-    "PRIVATE_KEY",
-    "PUBLIC_KEY",
-  ]
-}
+name: CD
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Dokku deploy
+      uses: vitalyliber/dokku-github-action@master
+      env:
+        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+        PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
+        HOST: casply.com
+        PROJECT: kawaii
 ```
-
-#### Examples
-
-* ```args = "/opt/deploy/run"```
-* ```args = "touch ~/.reload"```
 
 ### Required Secrets
 
