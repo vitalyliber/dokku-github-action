@@ -23,5 +23,4 @@ ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
 
 git checkout $DEPLOY_BRANCH
 
-GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" \ 
-git push dokku@$HOST:$PROJECT $DEPLOY_BRANCH:master
+GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push dokku@$HOST:$PROJECT $DEPLOY_BRANCH:master
