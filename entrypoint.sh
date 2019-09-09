@@ -3,6 +3,7 @@
 set -e
 
 SSH_PATH="$HOME/.ssh"
+DEPLOY_BRANCH="${BRANCH-master}"
 
 mkdir -p "$SSH_PATH"
 touch "$SSH_PATH/known_hosts"
@@ -20,6 +21,6 @@ ssh-add "$SSH_PATH/deploy_key"
 
 ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
 
-git checkout master
+git checkout $DEPLOY_BRANCH
 
-GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push dokku@$HOST:$PROJECT master
+GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push dokku@$HOST:$PROJECT $DEPLOY_BRANCH:master

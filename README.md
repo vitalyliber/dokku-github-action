@@ -45,6 +45,7 @@ You'll need to provide some env to use the action.
 
 * **HOST**: The host the action will SSH to run the git push command. ie, `your.site.com`.
 * **PROJECT**: The project is Dokku project name.
+* **BRANCH**: Repository branch that should be used for deploy, `master` is set by default.
 
 ## License
 
