@@ -11,7 +11,7 @@ To use the action simply add the following lines to your `.github/workflows/main
 ```
 name: CD
 
-on: 
+on:
   push:
     branches:
       - master
@@ -20,7 +20,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v1
     - name: Dokku deploy
@@ -36,16 +36,17 @@ jobs:
 
 You'll need to provide some secrets to use the action.
 
-* **PRIVATE_KEY**: Your SSH private key.
-* **PUBLIC_KEY**: Your SSH public key.
+- **PRIVATE_KEY**: Your SSH private key.
+- **PUBLIC_KEY**: Your SSH public key.
 
 ### Required Environments
 
 You'll need to provide some env to use the action.
 
-* **HOST**: The host the action will SSH to run the git push command. ie, `your.site.com`.
-* **PROJECT**: The project is Dokku project name.
-* **BRANCH**: Repository branch that should be used for deploy, `master` is set by default.
+- **HOST**: The host the action will SSH to run the git push command. ie, `your.site.com`.
+- **PROJECT**: The project is Dokku project name.
+- **BRANCH**: Repository branch that should be used for deploy, `master` is set by default.
+- **PORT**: Port of the sshd listen to, `22` is set by default.
 
 ## License
 
