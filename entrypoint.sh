@@ -23,14 +23,6 @@ ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
 
 git checkout $DEPLOY_BRANCH
 
-echo "Checking the project locked state"
-
-until ssh dokku@$HOST "apps:locked ${PROJECT}" 2>&1 | grep -q "does not exist"
-do
-  echo "Project is locked"
-  sleep 3
-done
-
 echo "The deploy is starting"
 
 GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${PORT-22}" git push dokku@$HOST:$PROJECT $DEPLOY_BRANCH:master
