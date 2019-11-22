@@ -25,7 +25,7 @@ git checkout $DEPLOY_BRANCH
 
 echo "Checking the project locked state"
 
-until ssh dokku@$HOST "apps:locked $PROJECT" 2>&1 | grep -q "does not exist"
+until ssh dokku@$HOST "apps:locked ${PROJECT}" 2>&1 | grep -q "does not exist"
 do
   echo "Project is locked"
   sleep 3
