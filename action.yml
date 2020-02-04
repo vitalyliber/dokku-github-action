@@ -1,0 +1,16 @@
+name: 'Dokku Github Action'
+description: 'Deploy applications to Dokku'
+author: 'Vitaly Liber'
+inputs: 
+  private_key:
+    description: "This will be used for ssh authentication. You can find it in home/.ssh/id_rsa"
+    required: true
+  public_key:
+    description: "This will be used for ssh authentication. You can find it in id_rsa.pub"
+    required: true
+outputs:
+  status:
+    description: "The Success/Failure of the action"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
