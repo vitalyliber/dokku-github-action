@@ -4,7 +4,8 @@ set -e
 
 SSH_PATH="$HOME/.ssh"
 DEPLOY_BRANCH="${BRANCH-master}"
-[[ -z "${FORCE_DEPLOY}" ]] && FORCE='' || $([ "$FORCE_DEPLOY" == true ] && FORCE="--force" || FORCE="")
+
+FORCE=$([ "$FORCE_DEPLOY" == true ] && echo "--force" || echo "")
 
 mkdir -p "$SSH_PATH"
 touch "$SSH_PATH/known_hosts"
