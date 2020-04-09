@@ -48,11 +48,12 @@ You'll need to provide some env to use the action.
 - **BRANCH**: Repository branch that should be used for deploy, `master` is set by default.
 - **PORT**: Port of the sshd listen to, `22` is set by default.
 
-## Optional Environments
+### Optional Environments
 
 You can optionally provide the following:
 
 - **FORCE_DEPLOY**: Force push the project to dokku, e.g. `FORCE_DEPLOY=true`
+
 ## License
 
 The Dockerfile and associated scripts and documentation in this project are released under the [MIT License](LICENSE).
