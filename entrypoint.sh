@@ -5,6 +5,8 @@ set -e
 SSH_PATH="$HOME/.ssh"
 DEPLOY_BRANCH="${BRANCH-master}"
 
+FORCE=$([ "$FORCE_DEPLOY" = true ] && echo "--force" || echo "")
+
 mkdir -p "$SSH_PATH"
 touch "$SSH_PATH/known_hosts"
 
@@ -25,4 +27,4 @@ git checkout $DEPLOY_BRANCH
 
 echo "The deploy is starting"
 
-GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${PORT-22}" git push dokku@$HOST:$PROJECT $DEPLOY_BRANCH:master
+GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p ${PORT-22}" git push dokku@$HOST:$PROJECT $DEPLOY_BRANCH:master $FORCE
