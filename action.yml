@@ -1,6 +1,9 @@
 name: 'Dokku Github Action'
 description: 'Deploy applications to Dokku'
 author: 'Vitaly Liber'
+branding:
+  icon: 'upload-cloud'  
+  color: 'blue'
 inputs: 
   private_key:
     description: "This will be used for ssh authentication. You can find it in home/.ssh/id_rsa"
