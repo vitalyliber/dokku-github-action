@@ -1,12 +1,10 @@
 #!/bin/sh
-
 set -e
 
 SSH_PATH="$HOME/.ssh"
 mkdir -p "$SSH_PATH"
 chmod 700 "$SSH_PATH"
 
-DEPLOY_BRANCH="${BRANCH-master}"
 FORCE=$([ "$FORCE_DEPLOY" = true ] && echo "--force" || echo "")
 
 echo "$PRIVATE_KEY" > "$SSH_PATH/deploy_key"
@@ -23,8 +21,6 @@ else
     GIT_SSH_COMMAND="$GIT_SSH_COMMAND -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 fi
 
-git checkout $DEPLOY_BRANCH
-
 echo "The deploy is starting"
 
-GIT_SSH_COMMAND="$GIT_SSH_COMMAND" git push dokku@$HOST:$PROJECT $DEPLOY_BRANCH:master $FORCE
+GIT_SSH_COMMAND="$GIT_SSH_COMMAND" git push dokku@$HOST:$PROJECT HEAD:master $FORCE
