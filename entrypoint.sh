@@ -17,14 +17,13 @@ if [ -n "$FORCE_DEPLOY" ]; then
 fi
 
 GIT_SSH_COMMAND="ssh -p ${PORT-22} -i $SSH_PATH/deploy_key"
-
 if [ -n "$HOST_KEY" ]; then
     echo "Adding hosts key to known_hosts"
     echo "$HOST_KEY" >> "$SSH_PATH/known_hosts"
     chmod 600 "$SSH_PATH/known_hosts"
 else
     echo "Disabling host key checking"
-    GIT_SSH_COMMAND="$GIT_SSH_COMMAND -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+    GIT_SSH_COMMAND="$GIT_SSH_COMMAND -o StrictHostKeyChecking=no"
 fi
 
 echo "The deploy is starting"
