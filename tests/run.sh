@@ -32,3 +32,4 @@ export HOST_KEY
 ./tests/host_key_fails.sh
 ./tests/host_key_skipped.sh
 ./tests/host_key_works.sh
+./tests/force_deploy.sh
