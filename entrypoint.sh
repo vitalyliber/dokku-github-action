@@ -4,22 +4,16 @@ set -e
 
 SSH_PATH="$HOME/.ssh"
 mkdir -p "$SSH_PATH"
+chmod 700 "$SSH_PATH"
 
 DEPLOY_BRANCH="${BRANCH-master}"
 FORCE=$([ "$FORCE_DEPLOY" = true ] && echo "--force" || echo "")
 
 echo "$PRIVATE_KEY" > "$SSH_PATH/deploy_key"
-echo "$PUBLIC_KEY" > "$SSH_PATH/deploy_key.pub"
-
-chmod 700 "$SSH_PATH"
 chmod 600 "$SSH_PATH/deploy_key"
-chmod 600 "$SSH_PATH/deploy_key.pub"
-
-eval $(ssh-agent)
-ssh-add "$SSH_PATH/deploy_key"
 
 
-GIT_SSH_COMMAND="ssh -p ${PORT-22}"
+GIT_SSH_COMMAND="ssh -p ${PORT-22} -i $SSH_PATH/deploy_key"
 
 
 if [ -n "$HOST_KEY" ]; then
