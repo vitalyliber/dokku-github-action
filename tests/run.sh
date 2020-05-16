@@ -20,10 +20,6 @@ export LOCAL_REPO=
 PRIVATE_KEY=
 PRIVATE_KEY=$(cat $PRIVATE_KEY)
 export PRIVATE_KEY
-# An absolute path to the public key for the above private key
-PUBLIC_KEY=
-PUBLIC_KEY=$(cat $PUBLIC_KEY)
-export PUBLIC_KEY
 
 # This grabs the current host key for HOST
 HOST_KEY=$(ssh-keyscan -t rsa "$HOST")
