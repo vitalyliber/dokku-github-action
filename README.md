@@ -53,6 +53,7 @@ You'll need to provide some env to use the action.
 You can optionally provide the following:
 
 - **FORCE_DEPLOY**: Force push the project to dokku, e.g. `FORCE_DEPLOY=true`
+- **HOST_KEY**: The results of running `ssh-keyscan -t rsa $HOST`. Use this if you want to check that the host you're deploying to is the right one (e.g. has the same keys).
 
 ## License
 
