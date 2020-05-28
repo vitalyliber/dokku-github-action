@@ -27,7 +27,6 @@ jobs:
       uses: vitalyliber/dokku-github-action@v4.0
       env:
         PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-        PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
         HOST: casply.com
         PROJECT: kawaii
 ```
@@ -37,7 +36,6 @@ jobs:
 You'll need to provide some secrets to use the action.
 
 - **PRIVATE_KEY**: Your SSH private key.
-- **PUBLIC_KEY**: Your SSH public key.
 
 ### Required Environments
 
