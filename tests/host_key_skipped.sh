@@ -3,7 +3,6 @@
 docker run \
     --env "BRANCH=$BRANCH" \
     --env "PRIVATE_KEY=$PRIVATE_KEY" \
-    --env "PUBLIC_KEY=$PUBLIC_KEY" \
     --env "HOST=$HOST" \
     --env "PROJECT=$PROJECT" \
     --workdir "/repo" \
