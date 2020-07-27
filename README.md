@@ -2,7 +2,7 @@
 
 Deploy a master branch to your Dokku server.
 
-This action will deploy the master brunch to your Dokku server via SSH.
+This action will deploy the master branch to your Dokku server via SSH.
 
 ## Usage
 
