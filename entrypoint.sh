@@ -26,6 +26,11 @@ else
     GIT_SSH_COMMAND="$GIT_SSH_COMMAND -o StrictHostKeyChecking=no"
 fi
 
+if [ -n "$APP_CONFIG" ]; then
+    echo "Setting app config"
+    $GIT_SSH_COMMAND dokku@$HOST config:set --no-restart $PROJECT $APP_CONFIG
+fi
+
 echo "The deploy is starting"
 
 GIT_SSH_COMMAND="$GIT_SSH_COMMAND" $GIT_COMMAND
