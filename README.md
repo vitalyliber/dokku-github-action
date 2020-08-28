@@ -29,6 +29,7 @@ jobs:
         PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         HOST: casply.com
         PROJECT: kawaii
+        CONFIG: ${{ secrets.APP_CONFIG }}
 ```
 
 ### Required Secrets
@@ -51,6 +52,8 @@ You can optionally provide the following:
 
 - **FORCE_DEPLOY**: Force push the project to dokku, e.g. `FORCE_DEPLOY=true`
 - **HOST_KEY**: The results of running `ssh-keyscan -t rsa $HOST`. Use this if you want to check that the host you're deploying to is the right one (e.g. has the same keys).
+- **APP_CONFIG**: Set dokku config through github secrets. Example: `RAILS_MAX_THREADS=25 SECRET_KEY_BASE=xyz123&$%`.
+- **BRANCH**: The ability to deploy from a non-master branch.
 
 ## License
 
