@@ -15,7 +15,6 @@ GIT_COMMAND="git push dokku@$HOST:$PROJECT"
 if [ -n "$BRANCH" ]; then
     GIT_COMMAND="$GIT_COMMAND $BRANCH:master"
 else
-    
     GIT_COMMAND="$GIT_COMMAND HEAD:master"
 fi
 
