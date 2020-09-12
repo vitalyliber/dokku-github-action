@@ -29,7 +29,7 @@ jobs:
         PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
         HOST: casply.com
         PROJECT: kawaii
-        CONFIG: ${{ secrets.APP_CONFIG }}
+        APP_CONFIG: ${{ secrets.APP_CONFIG }}
 ```
 
 ### Required Secrets
