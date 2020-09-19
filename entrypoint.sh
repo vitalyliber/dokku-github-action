@@ -35,7 +35,7 @@ fi
 
 if [ -n "$APP_CONFIG" ]; then
     echo "Setting app config"
-    $GIT_SSH_COMMAND dokku@$HOST config:set --no-restart $PROJECT $APP_CONFIG
+    $GIT_SSH_COMMAND dokku@$HOST config:set --no-restart $PROJECT $APP_CONFIG > /dev/null 2>&1
 fi
 
 echo "The deploy is starting"
