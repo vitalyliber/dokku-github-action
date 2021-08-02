@@ -38,6 +38,11 @@ if [ -n "$APP_CONFIG" ]; then
     $GIT_SSH_COMMAND dokku@$HOST config:set --no-restart $PROJECT $APP_CONFIG > /dev/null 2>&1
 fi
 
+if [ -n "$DOCKERFILE_LOCATION" ]; then
+    echo "Setting Dockerfile localtion"
+    $GIT_SSH_COMMAND dokku@$HOST builder-dockerfile:set $PROJECT $DOCKERFILE_LOCATION > /dev/null 2>&1
+fi
+
 echo "The deploy is starting"
 
 GIT_SSH_COMMAND="$GIT_SSH_COMMAND" $GIT_COMMAND
