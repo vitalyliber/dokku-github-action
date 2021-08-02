@@ -35,12 +35,12 @@ fi
 
 if [ -n "$APP_CONFIG" ]; then
     echo "Setting app config"
-    $GIT_SSH_COMMAND dokku@$HOST config:set --no-restart $PROJECT $APP_CONFIG > /dev/null 2>&1
+    $GIT_SSH_COMMAND dokku@$HOST config:set --no-restart $PROJECT $APP_CONFIG 2>&1 > /dev/null
 fi
 
 if [ -n "$DOCKERFILE_LOCATION" ]; then
     echo "Setting Dockerfile localtion"
-    $GIT_SSH_COMMAND dokku@$HOST builder-dockerfile:set $PROJECT $DOCKERFILE_LOCATION > /dev/null 2>&1
+    $GIT_SSH_COMMAND dokku@$HOST builder-dockerfile:set $PROJECT $DOCKERFILE_LOCATION 2>&1 > /dev/null
 fi
 
 echo "The deploy is starting"
