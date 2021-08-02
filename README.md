@@ -30,6 +30,7 @@ jobs:
         HOST: casply.com
         PROJECT: kawaii
         APP_CONFIG: ${{ secrets.APP_CONFIG }}
+        DOCKERFILE_LOCATION: ./path
 ```
 
 ### Required Secrets
