@@ -1,14 +1,14 @@
-FROM debian:stable-slim
+FROM debian:buster-slim
 
 # Github labels
 LABEL "com.github.actions.name"="dokku-github-action"
-LABEL "com.github.actions.description"="Deploy application to Dokku"
+LABEL "com.github.actions.description"="Deploy application to Dokku (Fork)"
 LABEL "com.github.actions.icon"="mic"
 LABEL "com.github.actions.color"="purple"
 
-LABEL "repository"="http://github.com/vitalyliber/dokku-github-action"
+LABEL "repository"="http://github.com/eventyret/dokku-github-action"
 LABEL "homepage"="http://github.com/actions"
-LABEL "maintainer"="VitalyLiber <zenamax@gmail.com>"
+LABEL "maintainer"="Simen Daehlin <simen.dehlin@gmail.com>"
 
 RUN apt-get update && apt-get install -y \
   openssh-client \
