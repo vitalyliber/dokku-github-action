@@ -1,6 +1,6 @@
 name: 'Dokku Github Action'
 description: 'Deploy applications to Dokku'
-author: 'Simen Daehlin && Original Author: Vitaly Liber'
+author: 'Vitaly Liber'
 branding:
   icon: 'upload-cloud'  
   color: 'blue'
