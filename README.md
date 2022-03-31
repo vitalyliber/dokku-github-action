@@ -1,6 +1,6 @@
 # Dokku for GitHub Actions
 
-Deploy an App to your Dokku server.
+Deploy your App to the Dokku server.
 
 This action will deploy the Application to your Dokku server via SSH.
 
