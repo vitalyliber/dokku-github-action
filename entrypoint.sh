@@ -48,6 +48,11 @@ if [ -n "$APP_CONFIG" ]; then
     $GIT_SSH_COMMAND dokku@$HOST config:set --no-restart $PROJECT $APP_CONFIG > /dev/null 2>&1
 fi
 
+# prevent dubious ownership error due to ownership mismatch in parent directories
+# see: https://github.com/vitalyliber/dokku-github-action/issues/25
+echo "Adding repository directory to the git global config as a safe directory"
+git config --global --add safe.directory /github/workspace
+
 echo "The deploy is starting"
 
 GIT_SSH_COMMAND="$GIT_SSH_COMMAND" $GIT_COMMAND
