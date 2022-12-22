@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:bullseye-slim
 
 # Github labels
 LABEL "com.github.actions.name"="dokku-github-action"
